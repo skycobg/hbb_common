@@ -120,6 +120,9 @@ pub const RS_PUB_KEY: &str = "4imRYfLYpfp+aoRYgtoCVG+gnC1Kve9Tjp6K1CaBHt0=";
 /// SKY Support: API server used when the client has no explicit api-server option and
 /// no custom rendezvous server (rustdesk-api behind nginx on 443, not http://host:21114).
 pub const DEFAULT_API_SERVER: &str = "https://remote.sky.bg";
+// SKY: the name people see (window titles, texts). APP_NAME stays "SKY-Support": it names files,
+// pipes, services and the uri scheme, where a space is not allowed. Empty = same as APP_NAME.
+pub const APP_DISPLAY_NAME: &str = "SKY Support";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
