@@ -123,6 +123,8 @@ pub const DEFAULT_API_SERVER: &str = "https://remote.sky.bg";
 // SKY: the name people see (window titles, texts). APP_NAME stays "SKY-Support": it names files,
 // pipes, services and the uri scheme, where a space is not allowed. Empty = same as APP_NAME.
 pub const APP_DISPLAY_NAME: &str = "SKY Support";
+// SKY: where the client looks for updates (JSON written by finish-release.sh). Empty = no updates.
+pub const SKY_UPDATE_INFO_URL: &str = "https://zapper.sky.bg/support/version.json";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
