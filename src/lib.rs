@@ -254,10 +254,11 @@ where
     Ok(io::BufReader::new(file).lines())
 }
 
+// SKY: 6 to 16 of a-z, A-Z, 0-9, '-' and '_' in any order, so only digits or only letters too (upstream asks
+// for a letter first). Our hbbs (github.com/skycobg/rustdesk-server) checks the same on a change of ID.
 pub fn is_valid_custom_id(id: &str) -> bool {
-    regex::Regex::new(r"^[a-zA-Z][\w-]{5,15}$")
-        .unwrap()
-        .is_match(id)
+    (6..=16).contains(&id.len())
+        && id.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'_')
 }
 
 // Support 1.1.10-1, the number after - is a patch version.
